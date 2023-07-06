@@ -1,0 +1,19 @@
+let store = {
+    name: fullName.value,
+    email: emailId.value,
+    city: city.value,
+    salary: salary.value
+}
+arr.push(store)
+
+
+    arr.map((element, index) => {
+                    tbody.innerHTML = `<tr key=${index}>
+               <td>${element.name}</td>
+               <td>${element.email}</td>
+               <td>${element.salary}</td>
+               <td>${element.city}</td>
+               <td><button class="edit"><i class="fa-solid fa-pen-to-square" onclick="rowEdit(this)"></i></button></td>
+               <td><buuton class="delete"><i class="fa-solid fa-trash" onclick="rowDelete(this)"></i></button></td>
+               </tr>`
+                })

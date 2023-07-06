@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container1">
+        <form class="form" id="form">
+            <h1>CRUD APP</h1>
+            <div class="input-div">
+                <label>Full Name :</label>
+                <input type="text" id="fullname" name="fullname" />
+                <p id="name-validation"></p>
+            </div>
+            <div class="input-div">
+                <label>Email id :</label>
+                <input type="email" id="emailid" name="emailid" />
+                <p id="email-validation"></p>
+            </div>
+            <div class="gender">
+                <div>
+                    <p class="gender-title">Gender :</label>
+                </div>
+                <div class="gender-field">
+                    <input type="radio" name="gender" value="Male" />Male
+                    <input type="radio" name="gender" value="Female" />Female
+                    <input type="radio" name="gender" value="Other" />Other
+                </div>
+            </div>
+            <p id="gender-validation"></p>
+
+            <div class="hobby">
+                <div>
+                    <p class="hobby-title">Hobby :</label>
+                </div>
+                <div class="hobby-field">
+                    <input type="checkbox" name="hobby" value="Playing Games" />Playing Games
+                    <input type="checkbox" name="hobby" value="Waching Movies" />Waching Movies
+                    <input type="checkbox" name="hobby" value="Reading Books" />Reading Books
+                </div>
+            </div>
+            <p id="hobby-validation"></p>
+
+            <div class="input-div">
+                <label>Mobile No :</label>
+                <input type="number" id="mobile" name="mobile" />
+                <p id="mobile-validation"></p>
+            </div>
+
+            <div class="input-div">
+                <label>Age :</label>
+                <input type="number" id="age" name="age" />
+                <p id="age-validation"></p>
+            </div>
+
+            <div class="state-div">
+                <label>State :</label>
+                <select onchange="stateChange(this)" id="state">
+                    <option selected disabled>select state</option>
+                    <option>Gujarat</option>
+                    <option>Delhi</option>
+                    <option>Punjab</option>
+                </select>
+                <p id="state-validation"></p>
+            </div>
+
+            <div class="city-div">
+                <label>City :</label>
+                <select id="city">
+                    <!-- <option disabled selected>select city</option> -->
+                    <!-- <option></option> -->
+                </select>
+                <p id="city-validation"></p>
+            </div>
+
+            <input type="submit" id="btn" />
+            <!-- <button id="clear" onclick="clearData()">Clear</button> -->
+            <input type="reset" id="clear" onclick="clearData()" />
+        </form>
+
+        <div class="search-box">
+            <input type="text" class="search" placeholder="Search ..." id="search" onkeyup="searchTable()">
+            <!-- <button class="sort-btn" onclick="sorting()">Sort Ascending</button> -->
+            <!-- <button class="sort-btn" onclick="Descending()">Sort Descending</button> -->
+            <button class="sort-btn" onclick="sortTable()">Sorting</button>
+        </div>
+        <table id="table">
+            <thead id="thead">
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email id</th>
+                    <th>Mobile No</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Hobby</th>
+                    <th>State</th>
+                    <th>City</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <!-- <tr>
+                    <td>Ujjwal</td>
+                    <td>Baldaniya</td>
+                    <td>20000</td>
+                    <td>Surat</td>
+                    <td><span class="edit"><i class="fa-solid fa-pen-to-square "></i></span></td>
+                    <td><span class="delete"><i class="fa-solid fa-trash "></i></span></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
