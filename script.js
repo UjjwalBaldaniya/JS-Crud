@@ -18,25 +18,10 @@ document.getElementById("form").addEventListener('submit', (e) => {
     validation()
 })
 
-// const validateField=(field,value,required)=>{
-//     if(required &&!value) document.getElementById("name-validation").innerHTML = `${field} is required`
-
-//     switch(field){
-//         case "fullName":
-//             if (regex.test(fullName.value)) {
-//                 document.getElementById("name-validation").innerHTML = ""
-//             } else {
-//                 document.getElementById("name-validation").innerHTML = "Name is Required"
-//             }
-//             break;
-//     }
-// }
-
 // -------------------------- VALIDATION -------------------------- //
 
 const validation = () => {
     let regex = /^[A-Za-z]+$/;
-    // validateField("fullName",fullName.value,true)
     if (regex.test(fullName.value)) {
         document.getElementById("name-validation").innerHTML = ""
     } else {
@@ -209,20 +194,10 @@ const rowEdit = (e) => {
         }
     }
     for (i = 0; i < hobby.length; i++) {
-        // debugger
         if (hobby[i].value == selectedLine.children[5].innerHTML) {
             hobby[i].checked = true;
         }
     }
-
-    {/* <td>${hobbies.join(", ")}</td>
-    var hobbies = [];
-    var hobbiesCheckboxes = document.querySelectorAll(
-    'input[type="checkbox"]:checked'
-    );
-    for (var i = 0; i < hobbiesCheckboxes.length; i++) {
-    hobbies.push(hobbiesCheckboxes[i].value);
-    } */}
 
     state.value = selectedLine.children[6].innerHTML
     city.value = selectedLine.children[7].innerHTML
@@ -250,62 +225,6 @@ const searchTable = () => {
         }
     }
 }
-
-// -------------------------- SORTING -------------------------- //
-
-// const sorting = () => {
-//     let table = document.getElementById("table");
-//     let tr = table.getElementsByTagName("tr");
-//     let isSwitch, i
-//     let switching = true
-
-//     while (switching) {
-//         switching = false
-
-//         for (i = 1; i < tr.length - 1; i++) {
-//             isSwitch = false;
-
-//             let x = tr[i].getElementsByTagName("td")[0]
-//             let y = tr[i + 1].getElementsByTagName("td")[0]
-
-//             if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-//                 isSwitch = true
-//                 break;
-//             }
-//         }
-//         if (isSwitch) {
-//             tr[i].parentNode.insertBefore(tr[i + 1], tr[i]);
-//             switching = true;
-//         }
-//     }
-// }
-
-// const Descending = () => {
-//     let table = document.getElementById("table");
-//     let tr = table.getElementsByTagName("tr");
-//     let isSwitch, i
-//     let switching = true
-
-//     while (switching) {
-//         switching = false
-
-//         for (i = 1; i < tr.length - 1; i++) {
-//             isSwitch = false;
-
-//             let x = tr[i].getElementsByTagName("td")[0]
-//             let y = tr[i + 1].getElementsByTagName("td")[0]
-
-//             if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-//                 isSwitch = true
-//                 break;
-//             }
-//         }
-//         if (isSwitch) {
-//             tr[i].parentNode.insertBefore(tr[i + 1], tr[i]);
-//             switching = true;
-//         }
-//     }
-// }
 
 function sortTable() {
     var switching, i, shouldSwitch, switchcount = 0;
